@@ -1,0 +1,59 @@
+---
+title: "ÍNDICES BIOCLIMÁTICOS"
+author: "Julio Cesar Contreras Huerta"
+date: "7/17/2021"
+output: html_document
+---
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(sf)
+library(rgee)
+library(mapedit)
+library(raster)
+library(cptcity)
+library(leaflet)
+library(leaflet.extras)
+library(MASS)
+library(dplyr)
+library(tidyverse)
+library(rgee)
+```
+
+```{r , eval=TRUE, echo=FALSE}
+# Inicializando sesion en GEE
+ee_Initialize('juliocontreras1', drive =TRUE)
+```
+
+# 1. Antecedentes
+# 2. Materiales
+## 2.1. Área de estudio
+## 2.2. Biodiversidad
+## 2.3. Variables climáticas
+
+## 2.4. Modelo de elevación digital
+# 3. Métodos
+## 3.1. Aplicación de los índices bioclimáticos
+### 3.1.1. Indices termopluviométricos
+### 3.1.2. Índices de continentalidad
+### 3.1.3. Diagrama ombrotérmico de Gaussen
+## 3.2. Estadísticas de zonas
+## 3.3. Geoprocesamiento y álgebra de mapas
+### 3.3.1. Geoprocesamiento
+### 3.3.2. Álgebra de mapas
+# 4. Resultados
+## 4.1. Índice de aridez de Martonne
+## 4.2. Índice Termopluviométrico Dantin-Revenga
+## 4.3. Índice de Continentalidad compensado por la latitud Currey
+## 4.4. Índice de Continentalidad compensado por latitud y altitud de Daget
+# 5. Conclusiones
+
+
+
+
+```{r}
+
+```
+
