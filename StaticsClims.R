@@ -1,7 +1,7 @@
 library(sf)
 library(raster)
 library(rasterVis)
-library(xlsx)
+# library(xlsx)
 library(dplyr)
 library(ggplot2)
 library(viridis)
@@ -9,8 +9,7 @@ library(latticeExtra)
 library(RColorBrewer)
 library(sp)
 # Ruta --------------------------------------------------------------------
-setwd("/home/jnck/Documents/biogeografia/practica/material/wc2.1/")
-
+getwd()
 # Datos --------------------------------------------------------------------
 ruta <- paste0("wc2.1_2.5m_prec_2010-2018/",
        "wc2.1_2.5m_prec_", rep(seq(2014,2018), each = 12),
