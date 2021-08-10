@@ -42,7 +42,7 @@ El objetivo de este trabajo es i) determinar el ambiente fitoclimático del clim
 
 ### **2.3.1 Precipitación**
 
-```{r warning=FALSE, cache=FALSE, eval=TRUE, fig.align='center'}
+```{r warning=FALSE, cache=FALSE, eval=FALSE, fig.align='center'}
 # Listar datos de precipitación
 list_img <- list.files('Data/wc2.1_2.5m_prec_2010-2018/', full.names = TRUE, pattern = "*.tif")
 
@@ -81,7 +81,7 @@ pz1
 
 ### **2.3.2 Temperatura Máxima**
 
-```{r warning=FALSE, cache=FALSE, eval=TRUE, fig.align='center'}
+```{r warning=FALSE, cache=FALSE, eval=FALSE, fig.align='center'}
 # Listar datos de tmax
 list_img <- list.files('Data/wc2.1_2.5m_tmax_2010-2018/', full.names = TRUE, pattern = "*.tif")
 
@@ -120,7 +120,7 @@ pz1
 
 ### **2.3.3 Temperatura Mínima**
 
-```{r warning=FALSE, cache=FALSE, eval=TRUE, fig.align='center'}
+```{r warning=FALSE, cache=FALSE, eval=FALSE, fig.align='center'}
 # Listar datos de tmin
 list_img <- list.files('Data/wc2.1_2.5m_tmin_2010-2018/', full.names = TRUE, pattern = "*.tif")
 
@@ -159,7 +159,7 @@ pz1
 
 ### **2.3.4 Temperatura Media**
 
-```{r warning=FALSE, cache=FALSE, eval=TRUE, fig.align='center'}
+```{r warning=FALSE, cache=FALSE, eval=FALSE, fig.align='center'}
 TMNJ2010 <- (TMIJ2010 + TXJ2010) / 2 # semisuma
 
 # ploteo
@@ -178,7 +178,7 @@ pz1
 ### **2.3.5 Guardado de 2010 - 2018**
 
 
-```{r eval=TRUE, echo = TRUE, message = FALSE}
+```{r eval=FALSE, echo = FALSE, message = FALSE}
 # Listar datos de tmin
 list_img <- list.files('Data/wc2.1_2.5m_tmin_2010-2018/', full.names = TRUE, pattern = "*.tif")[1:12]
 param <- c('tmin', 'tmax', 'prec')
@@ -349,7 +349,7 @@ knitr::include_graphics('Materiales/Img/TablaMartonne.png')
 
 ##### **Para 2010**
 
-```{r warning=FALSE, cache=FALSE, eval=TRUE, fig.align='center'}
+```{r warning=FALSE, cache=FALSE, eval=FALSE, fig.align='center'}
 
 list_img <- list.files('Data/wc2.1_2.5m_tmin_2010-2018/Crop/', full.names = TRUE, pattern = "*.tif")[1:12]
 param <- c('tmin', 'tmax', 'prec')
@@ -418,10 +418,11 @@ prov <- st_read('Materiales/Provincias.gpkg', quiet = TRUE) # plot(st_geometry(p
 Lima <- prov[prov$PROVINCIA == "LIMA",] # La necesitamos para cortar nuestro área de estudio.
 Lima <- st_transform(Lima, crs = 4623)
 
-list_img <- list.files('Data/wc2.1_2.5m_tmin_2010-2018/Crop/', full.names = TRUE, pattern = "*.tif")
+list_img <- list.files('Data/wc2.1_2.5m_tmin_2010-2018/Crop/', full.names = TRUE, pattern = "*.tif$")
 
 param <- c('tmin', 'tmax', 'prec') # parametros para cada carpeta 
 rt <- raster(list_img[1])
+raster()
 prec_t <- 0
 tmin_t <- 0
 tmax_t <- 0
@@ -434,8 +435,8 @@ for (j in param) {
   x = 1 # posiciones
   y = 1
   # print(j)
-  substr(list_img, 17, 20) = j # corte para cambiar de directorio para cada param
-  substr(list_img, 54, 57) = j
+  substr(list_img, 17, 20) = j 
+  substr(list_img, 53, 56) = j # for linux substr(list_img, 54, 57)
   for (i in 1:length(list_img)) {
     # print(i)
     list_rast[[i]] = raster(list_img[i]) # recien se metio dentro de una lista
