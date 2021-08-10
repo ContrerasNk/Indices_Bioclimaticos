@@ -436,7 +436,7 @@ for (j in param) {
   y = 1
   # print(j)
   substr(list_img, 17, 20) = j 
-  substr(list_img, 53, 56) = j # for linux substr(list_img, 54, 57)
+  substr(list_img, 53, 56) = j # for linux substr(list_img, 54, 57), for windows substr(list_img, 53, 56)
   for (i in 1:length(list_img)) {
     # print(i)
     list_rast[[i]] = raster(list_img[i]) # recien se metio dentro de una lista
